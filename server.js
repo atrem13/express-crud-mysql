@@ -21,6 +21,7 @@ db.sequelize.sync();
 app.get("/", (req, res) => {
     res.json({message: "hello world"})
 });
+require("./app/routes/tutorial.routes.js")(app);
 
 // set port
 const PORT = process.env.PORT || 8080;
