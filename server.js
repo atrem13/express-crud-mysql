@@ -13,6 +13,10 @@ app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+// define sequilize model
+const db = require('./app/models');
+db.sequelize.sync();
+
 // simple route
 app.get("/", (req, res) => {
     res.json({message: "hello world"})
